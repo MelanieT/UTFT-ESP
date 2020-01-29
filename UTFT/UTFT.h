@@ -187,6 +187,21 @@
 #elif defined(ESP8266) || defined(ESP32)
     #ifdef USE_ARDUINO
         #include "Arduino.h"
+    #else
+        #include <inttypes.h>
+        #include <math.h>
+        #include <cstring>
+        #include <cstdio>
+        // Dodgy Arduino types
+        typedef unsigned char byte;
+        typedef unsigned short word;
+        typedef char * String;
+        typedef bool boolean;
+		#define pgm_read_byte(addr)   (*(const unsigned char *)(addr))
+		#define pgm_read_word(addr) ({ \
+		  typeof(addr) _addr = (addr); \
+		  *(const unsigned short *)(_addr); \
+		})
     #endif
 	#include "hardware/esp/HW_ESP_defines.h"
 #endif
@@ -227,7 +242,9 @@ class UTFT
 		void	setBackColor(uint32_t color);
 		word	getBackColor();
 		void	print(char *st, int x, int y, int deg=0);
+#ifdef USE_ARDUINO
 		void	print(String st, int x, int y, int deg=0);
+#endif
 		void	printNumI(long num, int x, int y, int length=0, char filler=' ');
 		void	printNumF(double num, byte dec, int x, int y, char divider='.', int length=0, char filler=' ');
 		void	setFont(uint8_t* font);

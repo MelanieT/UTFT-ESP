@@ -7,6 +7,23 @@
 #ifdef ESP32
   #define cbi(reg, bitmask) *reg &= ~bitmask
   #define sbi(reg, bitmask) *reg |= bitmask
+  #ifndef USE_ARDUINO
+    #include <soc/gpio_reg.h>
+    #include "driver/gpio.h"
+    #include <freertos/FreeRTOS.h>
+    #include <freertos/task.h>
+    #define LOW 0
+    #define HIGH 1
+    #define digitalPinToPort(pin)       (((pin)>31)?1:0)
+    #define digitalPinToBitMask(pin)    (1UL << (((pin)>31)?((pin)-32):(pin)))
+    #define digitalPinToTimer(pin)      (0)
+    #define OUTPUT GPIO_MODE_OUTPUT
+    #define INPUT GPIO_MODE_INPUT
+    #define pinMode(p, m) gpio_pad_select_gpio((gpio_num_t)p); gpio_set_direction((gpio_num_t)p, m)
+    #define digitalWrite(p, v) gpio_set_level((gpio_num_t)p, v)
+    #define delay(x) vTaskDelay(x / portTICK_PERIOD_MS)
+    #define portOutputRegister(port)    ((volatile uint32_t*)((port)?GPIO_OUT1_REG:GPIO_OUT_REG))
+  #endif
 #endif
 
 #define pulse_high(reg, bitmask) sbi(reg, bitmask); cbi(reg, bitmask);

@@ -101,15 +101,15 @@ UTFT::UTFT(byte model, int CS, int RST, int SER)
 	word	dsx[] = {239, 239, 239, 239, 239, 239, 175, 175, 239, 127,
 			 127, 239, 271, 479, 239, 239, 239, 239, 0, 239,
 			 479, 319, 239, 175, 127, 239, 239, 319, 319, 799,
-			 127, 127,175};
+			 127, 127,175, 479, 127};
 	word	dsy[] = {319, 399, 319, 319, 319, 319, 219, 219, 399, 159,
 			 127, 319, 479, 799, 319, 319, 319, 319, 0, 319,
 			 799, 479, 319, 219, 159, 319, 319, 479, 479, 479,
-			 159, 159,219};
+			 159, 159,219, 319, 159};
 	byte	dtm[] = {16, 16, 16, 8, 8, 16, 8, SERIAL_4PIN, 16, SERIAL_5PIN,
 			 SERIAL_5PIN, 16, 16, 16, 8, 16, LATCHED_16, 16, 0, 8,
 			 16, 16, 16, 8, SERIAL_5PIN, SERIAL_5PIN, SERIAL_4PIN, 16, 16, 16,
-			 SERIAL_5PIN, SERIAL_5PIN, SERIAL_5PIN};
+			 SERIAL_5PIN, SERIAL_5PIN, SERIAL_5PIN, SERIAL_5PIN, SERIAL_5PIN};
 
 	hwSPI = true;
 
@@ -1092,6 +1092,7 @@ void UTFT::print(char *st, int x, int y, int deg)
 			rotateChar(*st++, x, y, i, deg);
 }
 
+#ifdef USE_ARDUINO
 void UTFT::print(String st, int x, int y, int deg)
 {
 	char buf[st.length()+1];
@@ -1099,6 +1100,7 @@ void UTFT::print(String st, int x, int y, int deg)
 	st.toCharArray(buf, st.length()+1);
 	print(buf, x, y, deg);
 }
+#endif
 
 void UTFT::printNumI(long num, int x, int y, int length, char filler)
 {
