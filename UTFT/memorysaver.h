@@ -39,7 +39,8 @@
 //#define DISABLE_ST7735			1	// ITDB18SP
 //#define DISABLE_ST7735_ALT		1	// TFT01_18SHLD
 //#define DISABLE_ST7735S			1	// TFT01_18SP
-
+//#define DISABLE_ILI9486_480		1	// WAVESHARE4
+//#define DISABLE_S6D02A1			1	// QD_TFT180B / QD_TFT180C
 // ----------------------------------------------------------------------------
 // The following TFT controllers are used by display modules and shields that 
 // have been retired by their vendors. They are still supported but support may

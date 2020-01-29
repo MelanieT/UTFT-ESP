@@ -391,6 +391,12 @@ void UTFT::InitLCD(byte orientation)
 #ifndef DISABLE_ILI9225B
 	#include "tft_drivers/ili9225b/initlcd.h"
 #endif
+#ifndef DISABLE_ILI9486_480
+	#include "tft_drivers/ili9486_480/initlcd.h"
+#endif
+#ifndef DISABLE_S6D02A1
+	#include "tft_drivers/s6d02a1/initlcd.h"
+#endif
 	}
 
 	sbi (P_CS, B_CS); 
@@ -497,6 +503,12 @@ void UTFT::setXY(word x1, word y1, word x2, word y2)
 #endif
 #ifndef DISABLE_ILI9225B
 	#include "tft_drivers/ili9225b/setxy.h"
+#endif
+#ifndef DISABLE_ILI9486_480
+	#include "tft_drivers/ili9486_480/setxy.h"
+#endif
+#ifndef DISABLE_S6D02A1
+	#include "tft_drivers/s6d02a1/setxy.h"
 #endif
 	}
 }

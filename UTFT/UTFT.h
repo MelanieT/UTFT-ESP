@@ -82,6 +82,8 @@
 #define HX8353C			30
 #define ST7735_ALT		31
 #define ILI9225B		32
+#define ILI9486_480     33
+#define S6D02A1         34
 
 #define ITDB32			0	// HX8347-A (16bit)
 #define ITDB32WC		1	// ILI9327  (16bit)
@@ -141,6 +143,8 @@
 #define CTE70CPLD		29	// CPLD		(16bit)
 #define DMTFT18101      30  // HX8353C  (Serial 5Pin)
 #define TFT18SHLD		31	// ST7735	(Serial 5Pin) Alternative Init
+#define WAVESHARE4      33  // ILI9486_480 (Serial 5Pin)
+#define QD_TFT180C      34  // S6D02A1  (Serial 5Pin)
 
 #define SERIAL_4PIN		4
 #define SERIAL_5PIN		5
@@ -170,6 +174,7 @@
 #define VGA_PURPLE		0x8010
 #define VGA_TRANSPARENT	0xFFFFFFFF
 
+
 #if defined(__AVR__)
 	#include "Arduino.h"
 	#include "hardware/avr/HW_AVR_defines.h"
@@ -180,7 +185,9 @@
 	#include "Arduino.h" // This will include energia.h where appropriate
 	#include "hardware/arm/HW_ARM_defines.h"
 #elif defined(ESP8266) || defined(ESP32)
-	#include "Arduino.h"
+    #ifdef USE_ARDUINO
+        #include "Arduino.h"
+    #endif
 	#include "hardware/esp/HW_ESP_defines.h"
 #endif
 

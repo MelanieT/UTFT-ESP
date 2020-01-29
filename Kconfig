@@ -1,0 +1,139 @@
+menu "UTFT Library"
+
+config DISABLE_CPLD
+    bool "DISABLE_CPLD driver (CTE50CPLD / CTE70CPLD / EHOUSE50CPLD)"
+    default y
+
+config DISABLE_HX8340B_8
+    bool "DISABLE_HX8340B_8 driver (ITDB22 8bit mode)"
+    default y
+
+config DISABLE_HX8352A
+    bool "DISABLE_HX8352A driver (ITDB32WD / TFT01_32WD / CTE32W)"
+    default y
+
+config DISABLE_HX8353C
+    bool "DISABLE_HX8353C driver (DMTFT18101)"
+    default y
+
+config DISABLE_ILI9225B
+    bool "DISABLE_ILI9225B driver ([NO DISPLAY TYPE])"
+    default y
+
+config DISABLE_ILI9325D_16
+    bool "DISABLE_ILI9325D_16 driver (TFT01_24_16)"
+    default y
+
+config DISABLE_ILI9325D_16ALT
+    bool "DISABLE_ILI9325D_16ALT driver (ILI9325D / ILI9325D) (ALTERNATE INIT)"
+    default y
+
+config DISABLE_ILI9325D_8
+    bool "DISABLE_ILI9325D_8 driver (ITDB24D / ITDB24DWOT / ITDB28 / TFT01_24_8 / DMTFT24104 / DMTFT28103)"
+    default y
+
+config DISABLE_ILI9341_16
+    bool "DISABLE_ILI9341_16 driver (CTE32_R2)"
+    default y
+
+config DISABLE_ILI9341_S4P
+    bool "DISABLE_ILI9341_S4P driver (MI0283QT9)"
+    default y
+
+config DISABLE_ILI9341_S5P
+    bool "DISABLE_ILI9341_S5P driver (TFT01_22SP / TFT01_24SP / TFT22SHLD / DMTFT28105)"
+    default y
+
+config DISABLE_ILI9481
+    bool "DISABLE_ILI9481 driver (CTE32HR)"
+    default y
+
+config DISABLE_ILI9486
+    bool "DISABLE_ILI9486 driver (CTE40)"
+    default y
+
+config DISABLE_ILI9486_480
+    bool "DISABLE_ILI9486_480 driver (WAVESHARE4)"
+    default y
+
+config DISABLE_PCF8833
+    bool "DISABLE_PCF8833 driver (LPH9135)"
+    default y
+
+config DISABLE_R61581
+    bool "DISABLE_R61581 driver (CTE35IPS)"
+    default y
+
+config DISABLE_S6D0164
+    bool "DISABLE_S6D0164 driver (CTE22 / DMTFT22102)"
+    default y
+
+config DISABLE_S6D02A1
+    bool "DISABLE_S6D02A1 driver (QD_TFT180B / QD_TFT180C)"
+    default y
+
+config DISABLE_S6D1121_16
+    bool "DISABLE_S6D1121_16 driver (ITDB24E_16)"
+    default y
+
+config DISABLE_S6D1121_8
+    bool "DISABLE_S6D1121_8 driver (ITDB24E_8 / TFT01_24R2)"
+    default y
+
+config DISABLE_SSD1289
+    bool "DISABLE_SSD1289 driver (ITDB32S / TFT01_32 / ELEE32_REVA / ELEE32_REVB / CTE32)"
+    default y
+
+config DISABLE_SSD1289LATCHED
+    bool "DISABLE_SSD1289LATCHED driver (INFINIT32)"
+    default y
+
+config DISABLE_SSD1289_8
+    bool "DISABLE_SSD1289_8 driver (ELEE32_REVB)"
+    default y
+
+config DISABLE_SSD1963_480
+    bool "DISABLE_SSD1963_480 driver (ITDB43 / TFT01_43)"
+    default y
+
+config DISABLE_SSD1963_800
+    bool "DISABLE_SSD1963_800 driver (ITDB50 / TFT01_50 / CTE50 / EHOUSE50)"
+    default y
+
+config DISABLE_SSD1963_800ALT
+    bool "DISABLE_SSD1963_800ALT driver (TFT01_70 / CTE70 / EHOUSE70)"
+    default y
+
+config DISABLE_ST7735
+    bool "DISABLE_ST7735 driver (ITDB18SP)"
+    default y
+
+config DISABLE_ST7735S
+    bool "DISABLE_ST7735S driver (TFT01_18SP)"
+    default y
+
+config DISABLE_ST7735_ALT
+    bool "DISABLE_ST7735_ALT driver (TFT01_18SHLD)"
+    default y
+
+config DISABLE_HX8347A
+    bool "DISABLE_HX8347A driver (ITDB32) (DEPRECATED)"
+    default y
+
+config DISABLE_ILI9325C
+    bool "DISABLE_ILI9325C driver (ITDB24) (DEPRECATED)"
+    default y
+
+config DISABLE_ILI9327
+    bool "DISABLE_ILI9327 driver (ITDB32WC / TFT01_32W) (DEPRECATED)"
+    default y
+
+config DISABLE_S1D19122
+    bool "DISABLE_S1D19122 driver (ITDB25H) (DEPRECATED)"
+    default y
+
+config DISABLE_HX8340B_S
+    bool "DISABLE_HX8340B_S driver (ITDB22 Serial mode) (DEPRECATED)"
+    default y
+
+endmenu
